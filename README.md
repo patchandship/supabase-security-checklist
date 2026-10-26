@@ -48,6 +48,8 @@ alter table public.your_table enable row level security;
 
 Then add the policies from step 2 in that same migration. Supabase: "Once RLS is enabled, no data is accessible through the API when using a publishable key, until you create policies." ([Supabase: Row Level Security](https://supabase.com/docs/guides/database/postgres/row-level-security))
 
+If your app went blank after you turned RLS on, your data is likely still there and the policies are what is missing: [I turned on RLS and now my app shows no data](https://patchandship.com/guides/supabase-rls-on-app-shows-no-data/).
+
 ### 2. Is each policy written per operation and limited to the owner?
 
 Supabase's Security Advisor flags always‑true policy conditions such as `using (true)` as a permissive RLS policy (lint 0024, a warning) ([Supabase: Database Advisors](https://supabase.com/docs/guides/database/database-advisors)). Supabase also notes that when a request has no signed‑in user (no access token, or the session has expired), `auth.uid()` returns null ([Supabase: Row Level Security](https://supabase.com/docs/guides/database/postgres/row-level-security)).
@@ -228,6 +230,7 @@ Want it done for you? [patchandship.com](https://patchandship.com/)
 ## Changelog
 
 - 2026-10-26: first version, mirrored from patchandship.com/supabase-rls-checklist.
+- 2026-10-26: step 1 now links the PatchAndShip guide for apps that show no data after RLS is turned on.
 
 From Oct 30, 2026, Supabase plans to stop auto-granting new public-schema tables on existing projects. Once the change reaches your project, new tables need an explicit GRANT. Existing tables keep their grants and RLS is unchanged. Source: https://supabase.com/changelog/45329
 
