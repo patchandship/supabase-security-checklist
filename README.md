@@ -173,6 +173,11 @@ These are the four policies from step 2. If you already created them, leave them
 
 More detail: [Supabase error 42501 "permission denied for table": what it means and the safe fix](https://patchandship.com/blog/supabase-42501-permission-denied-oct-30).
 
+### Related guides
+
+- [Can other people see my users' emails and data?](https://patchandship.com/guides/can-people-see-my-users)
+- [Supabase RLS policy examples for Lovable apps](https://patchandship.com/guides/supabase-rls-policy-examples)
+
 ### How can I reuse this checklist?
 
 #### Text: CC BY 4.0
@@ -231,6 +236,7 @@ Want it done for you? [patchandship.com](https://patchandship.com/)
 
 - 2026-10-26: first version, mirrored from patchandship.com/supabase-rls-checklist.
 - 2026-10-26: step 1 now links the PatchAndShip guide for apps that show no data after RLS is turned on.
+- 2026-11-02: added the Related guides section from the live page.
 
 From Oct 30, 2026, Supabase plans to stop auto-granting new public-schema tables on existing projects. Once the change reaches your project, new tables need an explicit GRANT. Existing tables keep their grants and RLS is unchanged. Source: https://supabase.com/changelog/45329
 
